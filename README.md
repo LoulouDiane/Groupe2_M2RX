@@ -57,7 +57,7 @@ $ pip install python-dotenv
 $ flask run 
 ```
 ## II. Initialisation / Mise à jour de la base de données
-Pour ce travail nous avons utilisé une base de données embarquées (SQLite).
+Pour ce travail nous avons utilisé une base de données embarquée (SQLite).
 1. Initialisation du système des migrations
 ```bash
 $ flask db init 
