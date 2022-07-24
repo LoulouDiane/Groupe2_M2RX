@@ -88,4 +88,3 @@ $ sudo apt install php7.4-cli
 $ php -S localhost:8000
 ```
 3. Saisir l'adresse dans un navigateur.
-
