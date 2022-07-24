@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Location de voiture :: Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color_skins.css">
+</head>
+
+<body class="theme-cyan">
+    <!-- WRAPPER -->
+    <div id="wrapper">
+        <div class="vertical-align-wrap">
+            <div class="vertical-align-middle auth-main">
+                <div class="auth-box">
+                    <div class="top">
+                        <img src="images/logo.jpg" alt="logo">
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <p class="lead">INTERFACE DE CONNECTION </p>
+                        </div>
+                        <div class="body">
+                            <!-- <form class="form-auth-small" method="post" action="Authentification"> -->
+                            <div class="form-group">
+                                <label for="login" class="control-label sr-only">Email</label>
+                                <input type="text" class="form-control" id="login" name="login" required
+                                    placeholder="login">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label sr-only">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fancy-checkbox element-left">
+                                    <input type="checkbox">
+                                    <span>Remember me</span>
+                                </label>
+                            </div>
+                            <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                            <div class="bottom">
+                                <hr>
+                                <span id="login_error" class="text-danger"></span> <br />
+                                <span>Vous n'avez pas de compte ? <a href="new_client.html">S'Enregistrer</a></span>
+                            </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery_2_1_1.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#submit").click(function () {
+                var login = $("#login").val();
+                var password = $("#password").val();
+
+                $.ajax({
+                    url: "http://localhost:5000/api/token",
+                    type: 'GET',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization",
+                            "Basic " + btoa(login + ":" + password));
+                    },
+                    success: function (data) {
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('login', login);
+                        localStorage.setItem('password', password);
+                        document.location.href = "home.html";
+                    },
+                    error: function (jqXHR) {
+                        $('#login_error').html("<b>Login and/or password incorrects</b>");
+                        console.log("ajax error => " + jqXHR.status);
+                    }
+                });
+
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

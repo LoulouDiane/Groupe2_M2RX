@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>:: Location de Voitures:: Client</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/jquery-nestable.css" />
+    <link rel="stylesheet" href="css/sweetalert.css" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color_skins.css">
+</head>
+
+<body class="theme-cyan">
+
+    <!-- Page Loader -->
+    <!-- <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="../images/logo_gecamine.png" width="100px"></div>
+            <p>Un instant...</p>
+        </div>
+    </div> -->
+    <br />
+    <hr>
+    <div id="wrapper">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-offcanvas">
+                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="navbar-brand">
+                    <a href="Authentification"><img src="images/logo.jpg" alt="logo" class="img-responsive logo"></a>
+                </div>
+
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="fa fa-sign-out disconnection"><i
+                                        class="icon-login"></i>Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="sidebar-scroll">
+                <div class="user-account">
+
+                    <img src="images/logo.jpg" class="rounded-circle user-photo" alt="image de profil">
+                    <div class="dropdown">
+                        <span>Bienvenu, </span> <br /> <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"> <strong id="my_username">
+                                John Doe</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account">
+                            <li><a href="#"><i class="fa fa-user"></i> Mon compte</a></li>
+                            <li><a href="#"><i class="fa fa-edit"></i> Aide</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" class="text-center disconnection"><i class="fa fa-sign-out"></i>
+                                    Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i
+                                class="icon-grid"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i
+                                class="icon-book-open"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i
+                                class="icon-settings"></i></a></li>
+                </ul>
+
+                <div class="tab-content p-l-0 p-r-0">
+                    <div class="tab-pane active" id="menu">
+                        <nav class="sidebar-nav">
+                            <ul class="main-menu metismenu" id="my_menu">
+                                <li><a href="home.html"><i class="icon-home"></i><span>Accueil</span></a></li>
+
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Clients</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="users_link">Afficher</a>
+                                        </li>
+                                        <li><a href="new_client.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Voitures</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="cars_link">Afficher</a></li>
+                                        <li><a href="new_voiture.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user"></i><span>Locations</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="rents_link">Afficher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="card patients-list">
+                        <div class="header">
+                            <h2>Liste de voitures</h2>
+                            <ul class="header-dropdown">
+                                <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Weekly">W</a></li>
+                                <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Monthly">M</a></li>
+                                <li><a class="tab_btn active" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Yearly">Y</a></li>
+                                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                        data-toggle="dropdown" role="button" aria-haspopup="true"
+                                        aria-expanded="false"></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another Action</a></li>
+                                        <li><a href="javascript:void(0);">Something else</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <div class="tab-content m-t-10 padding-0">
+                                <div class="table-responsive">
+                                    <!-- <table class="table m-b-0 table-hover"> -->
+                                    <table id="users_table" class="table table-hover  table-custom">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>N° Immatriculation</th>
+                                                <th>Marque</th>
+                                                <th>MOdèle</th>
+                                                <th>Catégorie</th>
+                                                <th>Couleur</th>
+                                                <th>Disponible</th>
+                                                <th>Observation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbodies">
+
+                                        </tbody>
+                                        <tfoot class="thead-dark">
+                                            <tr>
+                                                <th>N° Immatriculation</th>
+                                                <th>Marque</th>
+                                                <th>MOdèle</th>
+                                                <th>Catégorie</th>
+                                                <th>Couleur</th>
+                                                <th>Disponible</th>
+                                                <th>Observation</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Edit Client</h4>
+                </div>
+                <div class="modal-body" id="car_modal">
+                    <!-- <form id="new_user_form"> -->
+
+                    <!-- </form> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="update_car">SAVE CHANGES</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery_2_1_1.js"></script>
+    <script src="js/libscripts.bundle.js"></script>
+    <script src="js/vendorscripts.bundle.js"></script>
+    <script src="js/datatablescripts.bundle.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/jquery.nestable.js"></script>
+    <script src="js/sortable-nestable.js"></script>
+    <script src="js/dialogs.js"></script>
+    <script src="js/mainscripts.bundle.js"></script>
+    <script src="js/jquery-datatable.js"></script>
+    <script src="js/my_functions.js"></script>
+
+    <script>
+        $(function () {
+            initialisation();
+
+            $.ajax({
+                url: "http://localhost:5000/api/voitures",
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    if (jqXhr.status == 403) {
+                        swal("Echec d'Opération", "Votre token a expiré, vous allez être déconnecté  !", "error");
+                        setTimeout(function () {
+                            disconnect_current_user();
+                        }, 5000);
+                    } else {
+                        swal("Echec d'Opération", errorThrown + ' : ' + jqXhr.status, "error");
+                    }
+
+                }
+            }).then(function (data) {
+                var html = '';
+
+                data.voitures.forEach(elt => {
+                    html += '<tr><td>' + elt.immatriculation + '</td><td>' + elt.marque+ '</td><td>' + elt.modele+ '</td><td>' + elt.categorie + '</td><<td>' + elt.couleur + '</td><td>' + ((elt.disponible) ? "OUI" : "NON") + '</td><td>';
+                    if (localStorage.getItem('login').toUpperCase() == 'ADMIN') {
+                        html += '<button data-toggle="modal" data-target="#defaultModal" data-uri="' + elt.uri + '" data-immatriculation="' + elt.immatriculation + '" data-marque="' + elt.marque+ '" data-categorie="' + elt.categorie + 
+                            '" data-modele="' + elt.modele+ '" data-kilometrage="' + elt.kilometrage+ '" data-type_voiture="' + elt.type_voiture+ '" data-couleur="' + elt.couleur+ '" class="btn btn-primary edit_car">Edit</button> ' +
+                            '<button data-uri="' + elt.uri + '" class="btn btn-danger delete_car">Supprimer </button> ' +
+                            '<button data-id="' + elt.id + '" class="btn btn-success rent_car">Réserver </button> </td></tr>';
+                    } else {
+                        html += '<button data-id="' + elt.id + '" class="btn btn-success rent_car">Réserver </button> </td></tr>';
+                    }
+
+
+                });
+
+                $('#tbodies').html(html);
+
+                $('.edit_car').click(function () {
+                    var uri = $(this).data('uri');
+                    var immatriculation = $(this).data('immatriculation');
+                    var marque= $(this).data('marque');
+                    var categorie = $(this).data('categorie');
+                    var modele = $(this).data('modele');
+                    var kilometrage = $(this).data('kilometrage');
+                    var type_voiture = $(this).data('type_voiture');
+                    var couleur = $(this).data('couleur')
+
+                    var html = '<div class="row clearfix"><div class="col-sm-12"><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Matriculation" name="immatriculation" id="immatriculation" value="' + immatriculation + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Marque" name="marque" id="marque" value="' + marque+ '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Categorie" name="categorie" id="categorie" value="' + categorie + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Model" name="modele" id="modele" value="' + modele + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    
+                    html += '<input type="text" class="form-control" placeholder="kilometrage" name="kilometrage" id="kilometrage" value="' + kilometrage + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Type de voiture" name="type_voiture" id="type_voiture" value="' + type_voiture + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Couleur" name="couleur" id="couleur" value="' + couleur + '"> </div></div>';
+                    html += '<div class="col-sm-12" ><div class="form-group">';
+                    html += '<input type="hidden" value="' + uri + '" id="uri" /> </div></div></div>';
+
+                    $('#car_modal').html(html);
+                    // var datas = JSON.stringify({ 
+                    //     "uri": uri, 
+                    //     "immatriculation": immatriculation, 
+                    //     "marque": marque,
+                    //     "categorie": categorie,
+                    //     "modele": modele
+                    // });
+
+                })
+
+                $('.delete_car').click(function () {
+                    var uri = $(this).data('uri');
+                    $.ajax({
+                        url: uri,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                        },
+                        success: function (data) {
+                            swal("Opération Réussie!", "The Car has been deleted successfully!  :)", "success");
+                        }
+                    });
+                });
+
+                $('#update_car').click(function () {
+                    var immatriculation = $('#immatriculation').val();
+                    var marque= $('#marque').val();
+                    var modele= $('#modele').val();
+                    var categorie = $('#categorie').val();
+                    var kilometrage = $('#kilometrage').val();
+                    var type_voiture = $('#type_voiture').val();
+                    var couleur = $('#couleur').val();
+                    var uri = $('#uri').val();
+
+                    if (immatriculation.trim() !== '' && marque.trim() !== '' && modele.trim() !== '' && categorie.trim() !== '' 
+                            && kilometrage.trim() !== '' && type_voiture.trim() !== '' && couleur.trim() !== '') {
+                        $.ajax({
+                            url: uri,
+                            type: "PUT",
+                            dataType: "json",
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                'immatriculation': immatriculation,
+                                'marque': marque,
+                                'modele': modele,
+                                'categorie': categorie,
+                                'kilometrage': kilometrage,
+                                'type_voiture': type_voiture,
+                                'couleur': couleur,
+                                'uri': uri
+                            }),
+                            headers: {
+                                "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                            },
+                            success: function (data) {
+                                var res = JSON.stringify(data);
+                                res = JSON.parse(res)
+                                res = res.car;
+                                swal("Opération réussie :)", "La voiture '" + res.marque+ ' ' + res.modele+ ' : ' + res.immatriculation + "' a été mis à jour");
+                                setTimeout(function () {
+                                    location.href = 'voitures.html';
+                                }, 3000);
+                            },
+                            error: function (jqXhr, textStatus, errorThrown) {
+                                if (jqXhr.status == 403) {
+                                    swal("Echec d'Opération", "Votre token a expiré, vous allez être déconnecté  !", "error");
+                                    setTimeout(function () {
+                                        disconnect_current_user();
+                                    }, 5000);
+                                } else {
+                                    swal("Echec d'Opération", errorThrown + ' : ' + jqXhr.status, "error");
+                                }
+
+                            }
+                        });
+                    } else {
+                        swal("Echec d'Opération", "Username field or Password empty", "error");
+                    }
+
+                });
+
+                $('.rent_car').click(function () {
+                    var id_client = localStorage.getItem('login');
+                    var id_voiture = $(this).data('id');
+                    var today = new Date()
+                    var date_location = today.getFullYear() + '-' + padTo2Digits(today.getMonth() + 1) + '-' + padTo2Digits(today.getDate());
+                    date_location += ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+
+                    $.ajax({
+                        url: "http://localhost:5000/api/voitures/locations",
+                        dataType: 'json',
+                        type: 'post',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            "id_voiture": id_voiture,
+                            "id_client": id_client,
+                            "date_location": date_location
+                        }),
+                        processData: false,
+                        headers: {
+                            "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                        },
+                        success: function (result) {
+                            var res = JSON.stringify(result);
+                            res = JSON.parse(res);
+                            res = res.renting;
+                            swal('Opération Réussie', "La Voiture a été louée :)", "success");
+                            setTimeout(
+                                function () {
+                                    location.href = "voitures.html";
+                                }, 3000
+                            );
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                            if (jqXhr.status == 400) {
+                                swal("Echec d'Opération", "Cette voiture est déjà en location!", "error");
+                            } else {
+                                swal("Echec d'Opération", errorThrown + ' : ' + jqXhr.status, "error");
+                            }
+
+                        }
+                    })
+                });
+
+            });
+        });
+    </script>
+</body>
+
+</html>

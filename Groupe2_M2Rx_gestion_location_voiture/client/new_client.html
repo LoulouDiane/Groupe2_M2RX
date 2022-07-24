@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>:: Location de Voitures:: Nouveau Client</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/jquery-nestable.css" />
+    <link rel="stylesheet" href="css/sweetalert.css" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color_skins.css">
+</head>
+
+<body class="theme-cyan">
+
+    <!-- Page Loader -->
+    <!-- <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="../images/logo_gecamine.png" width="100px"></div>
+            <p>Un instant...</p>
+        </div>
+    </div> -->
+    <br />
+    <hr>
+    <div id="wrapper">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-offcanvas">
+                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="navbar-brand">
+                    <a href="home.html"><img src="images/logo.jpg" alt="logo" class="img-responsive logo"></a>
+                </div>
+
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="fa fa-sign-out disconnection"><i
+                                        class="icon-login"></i>Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="sidebar-scroll">
+                <div class="user-account">
+
+                    <img src="images/logo.jpg" class="rounded-circle user-photo" alt="image de profil">
+                    <div class="dropdown">
+                        <span>Bienvenu, </span> <br /> <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"> <strong id="my_username">
+                                John Doe</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account">
+                            <li><a href="#"><i class="fa fa-user"></i> Mon compte</a></li>
+                            <li><a href="#"><i class="fa fa-edit"></i> Aide</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" class="text-center disconnection"><i class="fa fa-sign-out"></i>
+                                    Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i
+                                class="icon-grid"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i
+                                class="icon-book-open"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i
+                                class="icon-settings"></i></a></li>
+                </ul>
+
+                <div class="tab-content p-l-0 p-r-0">
+                    <div class="tab-pane active" id="menu">
+                        <nav class="sidebar-nav">
+                            <ul class="main-menu metismenu" id="my_menu">
+                                <li><a href="home.html"><i class="icon-home"></i><span>Accueil</span></a></li>
+
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Clients</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="users_link">Afficher</a>
+                                        </li>
+                                        <li><a href="new_client.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Voitures</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="cars_link">Afficher </a></li>
+                                        <li><a href="new_voiture.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user"></i><span>Location</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="rents_link">Afficher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div class="card patients-list">
+                        <div class="header">
+                            <h2>New Client</h2>
+                            <ul class="header-dropdown">
+                                <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Weekly">W</a></li>
+                                <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Monthly">M</a></li>
+                                <li><a class="tab_btn active" href="javascript:void(0);" data-toggle="tooltip"
+                                        data-placement="top" title="Yearly">Y</a></li>
+                                <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                        data-toggle="dropdown" role="button" aria-haspopup="true"
+                                        aria-expanded="false"></a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another Action</a></li>
+                                        <li><a href="javascript:void(0);">Something else</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+
+                            <div class="tab-content m-t-10 padding-0">
+
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <h2>
+                                                    Enregistrement du nouveau Client <small>Description text
+                                                        here...</small>
+                                                </h2>
+                                            </div>
+                                            <div class="body">
+                                                <!-- <form id="new_user_form"> -->
+                                                <div class="row clearfix">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Nom : " name="nom" id="nom"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Postnom : " name="postnom" id="postnom">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Prénom : " name="prenom" id="prenom"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="date" class="form-control"
+                                                                placeholder="Date Naissance : " name="date_naissance" id="date_naissance"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control"
+                                                                placeholder="Email : " name="email" id="email"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <textarea class="form-control" name="adresse" id="adresse">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Nationalité : " name="nationalite" id="nationalite"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Numéro de téléphone : " name="telephone" id="telephone"
+                                                                required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Username" name="username" id="username"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="password" name="password" id="password"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="password" class="form-control"
+                                                                placeholder="confirm password" name="password2"
+                                                                id="password2" required>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row clearfix">
+                                                    <div class="col-sm-12">
+                                                        <button id="submit_button"
+                                                            class="btn btn-primary">Submit</button>
+                                                        <button type="reset"
+                                                            class="btn btn-outline-secondary">Cancel</button>
+                                                    </div>
+                                                </div>
+                                                <div class="bottom">
+                                                    <hr>
+                                                    <span>Vous avez déjà un compte ? <a href="index.html">Se Connecter</a></span>
+                                                </div>
+                                                <!-- </form> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="js/libscripts.bundle.js"></script>
+    <script src="js/vendorscripts.bundle.js"></script>
+    <script src="js/datatablescripts.bundle.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/jquery.nestable.js"></script>
+    <script src="js/sortable-nestable.js"></script>
+    <script src="js/dialogs.js"></script>
+    <script src="js/mainscripts.bundle.js"></script>
+    <script src="js/jquery-datatable.js"></script>
+    <script src="js/jquery_2_1_1.js"></script>
+    <script src="js/my_functions.js"></script>
+    <script>
+        $(function () {
+            $(".disconnection").click(function () {
+                disconnect_current_user();
+            });
+
+            $(".users_link").click(function () {
+                // alert(token);
+                location.href = "clients.html";
+            });
+            $(".cars_link").click(function () {
+                // alert(token);
+                location.href = "voitures.html";
+            });
+            $(".rents_link").click(function () {
+                // alert(token);
+                location.href = "locations.html";
+            });
+
+            $("#submit_button").click(function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var password2 = $('#password2').val();
+                var nom = $('#nom').val();
+                var postnom = $('#postnom').val();
+                var prenom = $('#prenom').val();
+                var date_naissance = $('#date_naissance').val();
+                var email = $('#email').val();
+                var adresse = $('#adresse').val();
+                var nationalite = $('#nationalite').val();
+                var telephone = $('#telephone').val();
+
+                if (password !== '' && password === password2) {
+                    if (username !== '' && nom !== '' && prenom !== '' && telephone !== '' && date_naissance !== '' &&
+                            email !== '' && adresse !== '' && nationalite !== '' && telephone !== ''){
+                        $.ajax({
+                            url: "http://localhost:5000/api/clients",
+                            dataType: 'json',
+                            type: 'post',
+                            contentType: 'application/json',
+                            data: JSON.stringify({
+                                "username": username,
+                                "password": password,
+                                "nom": nom,
+                                "postnom": postnom,
+                                "prenom": prenom,
+                                "date_naissance": date_naissance,
+                                "email": email,
+                                "adresse": adresse,
+                                "nationalite": nationalite,
+                                "telephone": telephone
+                            }),
+                            processData: false,
+                            success: function (result) {
+                                var res = JSON.stringify(result);
+                                res = JSON.parse(res);
+                                swal('Opération effectuée', "Le client '" + res.username + "' a été ajouté avec succès", "success");
+                                setTimeout(
+                                    function () {
+                                        location.href = "clients.html";
+                                    }, 7000
+                                );
+                            },
+                            error: function (jqXhr, textStatus, errorThrown) {
+                                alert(errorThrown);
+                                swal("Echec d'Opération!  :(", errorThrown, "error")
+                            }
+                        });
+                    } else {
+                        swal("Echec d'Opération", "Veuillez remplir tous les champs :(", "error");
+                    }
+
+                } else {
+                    swal("Echec d'Opération", "The passwords don't match!  :(", "error");
+                    return;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>:: Location de Voitures :: Client</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template" />
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/jquery-nestable.css" />
+    <link rel="stylesheet" href="css/sweetalert.css" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/color_skins.css" />
+</head>
+
+<body class="theme-cyan">
+
+    <!-- Page Loader -->
+    <!-- <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="../images/logo_gecamine.png" width="100px"></div>
+            <p>Un instant...</p>
+        </div>
+    </div> -->
+    <br />
+    <hr>
+    <div id="wrapper">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-offcanvas">
+                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="navbar-brand">
+                    <a href="Authentification"><img src="images/logo.jpg" alt="logo" class="img-responsive logo" /></a>
+                </div>
+
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="fa fa-sign-out disconnection"><i
+                                        class="icon-login"></i>Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="sidebar-scroll">
+                <div class="user-account">
+
+                    <img src="images/logo.jpg" class="rounded-circle user-photo" alt="image de profil" />
+                    <div class="dropdown">
+                        <span>Bienvenu, </span> <br /> <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"> <strong id="my_username">
+                                John Doe</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account">
+                            <li><a href="#"><i class="fa fa-user"></i> Mon compte</a></li>
+                            <li><a href="#"><i class="fa fa-edit"></i> Aide</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" class="text-center disconnection"><i class="fa fa-sign-out"></i>
+                                    Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i
+                                class="icon-grid"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i
+                                class="icon-book-open"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i
+                                class="icon-settings"></i></a></li>
+                </ul>
+
+                <div class="tab-content p-l-0 p-r-0">
+                    <div class="tab-pane active" id="menu">
+                        <nav class="sidebar-nav">
+                            <ul class="main-menu metismenu">
+                                <li><a href="home.html"><i class="icon-home"></i><span>Accueil</span></a></li>
+
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Clients</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="users_link">Afficher</a>
+                                        </li>
+                                        <li><a href="new_client.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Voitures</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="cars_link">Afficher</a></li>
+                                        <li><a href="new_voiture.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user"></i><span>Location</span> </a>
+                                    <ul>
+                                        <li><a href="#" class="rents_link">Afficher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div id="main-content">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="card patients-list">
+                    <div class="header">
+                        <h2>List de Clients</h2>
+                        <ul class="header-dropdown">
+                            <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip" data-placement="top"
+                                    title="Weekly">W</a></li>
+                            <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip" data-placement="top"
+                                    title="Monthly">M</a></li>
+                            <li><a class="tab_btn active" href="javascript:void(0);" data-toggle="tooltip"
+                                    data-placement="top" title="Yearly">Y</a></li>
+                            <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another Action</a></li>
+                                    <li><a href="javascript:void(0);">Something else</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="body">
+
+                        <div class="tab-content m-t-10 padding-0">
+                            <div class="table-responsive">
+                                <!-- <table class="table m-b-0 table-hover"> -->
+                                <table id="users_table" class="table table-hover  table-custom">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>URI</th>
+                                            <th>Username</th>
+                                            <th>Nom</th>
+                                            <th>Postnom</th>
+                                            <th>Prénom</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodies">
+
+                                    </tbody>
+                                    <tfoot class="thead-dark">
+                                        <tr>
+                                            <th>URI</th>
+                                            <th>Username</th>
+                                            <th>Nom</th>
+                                            <th>Postnom</th>
+                                            <th>Prénom</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title" id="defaultModalLabel">Editer Client</h4>
+                </div>
+                <div class="modal-body" id="user_modal">
+                    <!-- <form id="new_user_form"> -->
+
+                    <!-- </form> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="update_user">SAVE CHANGES</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery_2_1_1.js"></script>
+    <script src="js/libscripts.bundle.js"></script>
+    <script src="js/vendorscripts.bundle.js"></script>
+    <script src="js/datatablescripts.bundle.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/jquery.nestable.js"></script>
+    <script src="js/sortable-nestable.js"></script>
+    <script src="js/dialogs.js"></script>
+    <script src="js/mainscripts.bundle.js"></script>
+    <script src="js/jquery-datatable.js"></script>
+    <script src="js/my_functions.js"></script>
+
+
+    <script>
+        $(function () {
+            initialisation();
+
+            $.ajax({
+                url: "http://localhost:5000/api/clients",
+                type: "GET",
+                dataType: "json",
+                headers: {
+                    "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                },
+                error: function (jqXhr, textStatus, errorThrown) {
+                    if (jqXhr.status == 403) {
+                        swal("Echec d'Opération", "Votre token a expiré, vous allez être déconnecté  !", "error");
+                        setTimeout(function () {
+                            disconnect_current_user();
+                        }, 5000);
+                    } else {
+                        swal("Echec d'Opération", errorThrown + ' : ' + jqXhr.status, "error");
+                    }
+
+                }
+            }).then(function (data) {
+                var html = '';
+                var date;
+                data.forEach(elt => {
+                    date = new Date(elt.date_naissance);
+                    // my_date = date.toLocaleDateString();
+                    my_date = '' + date.getFullYear() + '-' + padTo2Digits(date.getMonth() + 1) + '-' +padTo2Digits(date.getDate());
+                    
+                    if (elt.username == localStorage.getItem('login') || localStorage.getItem('login').toUpperCase() == 'ADMIN') {
+                        html += '<tr><td>' + elt.uri + '</td><td>' + elt.username + '</td><td>' + elt.nom + '</td><td>' + elt.postnom + '</td>';
+                        html += '<td>' + elt.prenom + '</td><td><button data-toggle="modal" data-target="#defaultModal" ';
+                        html += 'data-uri="' + elt.uri + '" data-username="' + elt.username + '" data-nom="' + elt.nom + '" data-password="' + elt.password +'" ';
+                        html += 'data-postnom="' + elt.postnom + '" data-prenom="' + elt.prenom + '" data-date_naissance="' + my_date + '" ';
+                        html += 'data-email="' + elt.email + '" data-adresse="' + elt.adresse + '" data-nationalite="' + elt.nationalite + '" ';
+                        html += 'data-telephone="' + elt.telephone + '" class="btn btn-primary edit_user">Détails & Modification</button> <button data-uri="' + elt.uri + '" ';
+                        html += 'class="btn btn-danger delete_user">Supprimer </button> </td></tr>';
+                    }
+
+                });
+                $('#tbodies').html(html);
+                $('.edit_user').click(function () {
+                    // alert($(this).data('username'));
+                    var uri = $(this).data('uri');
+                    var username = $(this).data('username');
+                    var password = $(this).data('password');
+                    var nom = $(this).data('nom');
+                    var postnom = $(this).data('postnom');
+                    var prenom = $(this).data('prenom');
+                    var date_naissance = $(this).data('date_naissance');
+                    
+                    var email = $(this).data('email');
+                    var adresse = $(this).data('adresse');
+                    var nationalite = $(this).data('nationalite');
+                    var telephone = $(this).data('telephone');
+
+                    // var datas = JSON.stringify({ "uri": uri, "username": username, "password": password });
+
+                    var html = '<div class="row clearfix"><div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Nom : " name="nom" id="nom" value="' + nom + '" ';
+                    html += 'required></div></div><div class="col-sm-4"><div class="form-group"><input type="text" class="form-control" ';
+                    html += 'placeholder="Postnom : " name="postnom" id="postnom" value="' + postnom +'"></div></div><div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Prénom : " name="prenom" id="prenom" value="' + prenom + '" required></div></div>';
+                    html += '<div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Username" name="username" id="username" value="' + username +'" required> '
+                    html += '<input type="hidden" class="form-control" placeholder="Username" name="uri" id="uri" value="' + uri +'" required></div></div>'
+                    html += '<div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="password" class="form-control" placeholder="Password" name="password" id="password" value="' + password +'" required></div></div>'
+                    html += '<div class="col-sm-4"><div class="form-group"><input type="date" class="form-control" placeholder="Date Naissance : " ';
+                    html += 'name="date_naissance" id="date_naissance" value="' + date_naissance + '" required></div></div><div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="email" class="form-control" placeholder="Email : " name="email" id="email" value="' + email + '" required></div></div>';
+                    html += '<div class="col-sm-8"><div class="form-group"><textarea class="form-control" name="adresse" id="adresse">' + adresse + '</textarea>';
+                    html += '</div></div><div class="col-sm-4"><div class="form-group"><input type="text" class="form-control" placeholder="Nationalité : " ';
+                    html += 'name="nationalite" id="nationalite" value="' + nationalite + '" required></div></div><div class="col-sm-4"><div class="form-group">';
+                    html += '<input type="text" class="form-control" placeholder="Numéro de téléphone : " name="telephone" id="telephone" value="' + telephone + '" required>';
+                    html += '</div></div><div class="col-sm-4"><div class="form-group"></div></div></div>';
+
+                    // var html = '<div class="row clearfix"><div class="col-sm-12"><div class="form-group">';
+                    // html += '<input type="text" class="form-control" placeholder="Username" name="username" id="username" value="' + username + '"> </div></div>';
+                    // html += '<div class="col-sm-12" ><div class="form-group">';
+                    // html += '<input type="password" class="form-control" placeholder="password" name="password" id="password" value="' + password + '"> </div></div></div>';
+                    // html += '<input type="hidden" value="' + uri + '" id="uri" />';
+    
+                    $('#user_modal').html(html);
+                })
+                $('.delete_user').click(function () {
+                    var uri = $(this).data('uri');
+                    $.ajax({
+                        url: uri,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        headers: {
+                            "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                        },
+                        success: function (data) {
+                            swal("Opération réussie :)", "Ce client a été supprimé :)", "success");
+                            setTimeout(function () {
+                                location.href = 'clients.html';
+                            }, 3000);
+                        }
+                    });
+                })
+            });
+
+            $('#update_user').click(function () {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var nom = $('#nom').val();
+                var postnom = $('#postnom').val();
+                var prenom = $('#prenom').val();
+                var date_naissance = $('#date_naissance').val();
+                var email = $('#email').val();
+                var adresse = $('#adresse').val();
+                var nationalite = $('#nationalite').val();
+                var telephone = $('#telephone').val();
+                var uri = $('#uri').val();
+
+                if (username !== '' && nom !== '' && prenom !== '' && date_naissance !== '' && email !== '' 
+                        && adresse !== '' && nationalite !== '' && telephone !== '') {
+                    $.ajax({
+                        url: uri,
+                        type: "PUT",
+                        dataType: "json",
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            'username': username,
+                            'password': password,
+                            'nom': nom,
+                            'postnom': postnom,
+                            'prenom': prenom,
+                            'email': email,
+                            'adresse': adresse,
+                            'nationalite': nationalite,
+                            'telephone': telephone,
+                            'date_naissance': date_naissance,
+                        }),
+                        headers: {
+                            "Authorization": "Basic " + btoa(localStorage.getItem('token') + ":unused")
+                        },
+                        success: function (data) {
+                            var res = JSON.stringify(data);
+                            res = JSON.parse(res)
+                            res = res.client;
+                            swal("Opération réussie :)", "Le client '" + res.username + "' a été mis à jour");
+                            setTimeout(function () {
+                                if (localStorage.getItem('login') != username) {
+                                    location.href = 'clients.html';
+                                } else {
+                                    disconnect_current_user();
+                                }
+
+                            }, 3000);
+                        },
+                        error: function (jqXhr, textStatus, errorThrown) {
+                            console.warn(jqXhr.responseText);
+                            if (jqXhr.status == 403) {
+                                swal("Echec d'Opération", "Votre token a expiré, vous allez être déconnecté  !", "error");
+                                setTimeout(function () {
+                                    disconnect_current_user();
+                                }, 5000);
+                            } else {
+                                swal("Echec d'Opération", errorThrown + ' : ' + jqXhr.status, "error");
+                            }
+
+                        }
+                    });
+                } else {
+                    swal("Echec d'Opération", "Username field or Password empty", "error");
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

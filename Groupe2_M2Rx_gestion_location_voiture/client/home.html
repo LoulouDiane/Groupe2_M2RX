@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Location de Voitures :: Accueil</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Lucid Bootstrap 4.1.1 Admin Template">
+    <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/jquery-nestable.css" />
+    <link rel="stylesheet" href="css/sweetalert.css" />
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/color_skins.css">
+</head>
+
+<body class="theme-cyan">
+
+    <!-- Page Loader -->
+    <!-- <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img src="../images/logo_gecamine.png" width="100px"></div>
+            <p>Un instant...</p>
+        </div>
+    </div> -->
+    <br />
+    <hr>
+    <div id="wrapper">
+        <nav class="navbar navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-offcanvas">
+                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="navbar-brand">
+                    <a href="home.html"><img src="images/logo.jpg" alt="" class="img-responsive logo"></a>
+                </div>
+
+                <div class="navbar-right">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" class="fa fa-sign-out disconnection"><i
+                                        class="icon-login"></i>Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="left-sidebar" class="sidebar">
+            <div class="sidebar-scroll">
+                <div class="user-account">
+
+                    <img src="images/logo.jpg" class="rounded-circle user-photo" alt="image de profil">
+                    <div class="dropdown">
+                        <span>Bienvenu, </span> <br /> <a href="javascript:void(0);" class="dropdown-toggle user-name"
+                            data-toggle="dropdown"> <strong id="my_username">
+                                John Doe</strong></a>
+                        <ul class="dropdown-menu dropdown-menu-right account">
+                            <li><a href="#"><i class="fa fa-user"></i> Mon compte</a></li>
+                            <li><a href="#"><i class="fa fa-edit"></i> Aide</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" class="text-center disconnection"><i class="fa fa-sign-out"></i>
+                                    Se Déconnecter</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i
+                                class="icon-grid"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i
+                                class="icon-book-open"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i
+                                class="icon-settings"></i></a></li> -->
+                </ul>
+
+                <div class="tab-content p-l-0 p-r-0">
+                    <div class="tab-pane active" id="menu">
+                        <nav class="sidebar-nav">
+                            <ul class="main-menu metismenu" id="my_menu">
+                                <li><a href="home.html"><i class="icon-home"></i><span>Accueil</span></a></li>
+
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Clients</span> </a>
+                                    <ul>
+                                        <li><a class="users_link" href="#">Afficher</a></li>
+                                        <li><a href="new_client.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user-follow"></i><span>Voitures</span> </a>
+                                    <ul>
+                                        <li><a class="cars_link" href="#">Afficher</a></li>
+                                        <li><a href="new_voiture.html">Ajouter</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0);" class="has-arrow"><i
+                                            class="icon-user"></i><span>Location</span> </a>
+                                    <ul>
+                                        <li><a class="rents_link" href="#">Afficher</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div id="main-content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-sm-12">
+                        <h2>
+                            <a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i
+                                    class="fa fa-arrow-left"></i></a> Accueil
+                        </h2>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home.html"><i class="fa fa-home"></i></a></li>
+                            <li class="breadcrumb-item active"><span class="badge badge-default">WELCOME</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="GererCategoriePersonne" method="post">
+                                        <input type="hidden" name="categoriePersonne" value="PATIENT">
+                                    </form>
+                                    <a href="#" class="users_link">
+                                        <div class="alert text-light bg-success">
+                                            <i class="fa  fa-user-plus" style="font-size: 2rem"></i>
+                                            <h6>Gestion de clients </h6>
+                                            <span>Administration des comptes des clients</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#" class="cars_link">
+                                        <div class=" alert text-light bg-primary text-light">
+                                            <i class="fa  fa-search" style="font-size: 2rem"></i>
+                                            <h6>Gestion de Voitures</h6>
+                                            <span>Liste de Voitures</span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#" class="rents_link">
+                                        <div class="alert bg-dark text-light">
+                                            <i class="icon-calendar" style="font-size: 2rem"></i>
+                                            <h6>Gestion de Locations</h6>
+                                            <span>Liste des Locations</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/libscripts.bundle.js"></script>
+    <script src="js/vendorscripts.bundle.js"></script>
+    <script src="js/datatablescripts.bundle.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/jquery.nestable.js"></script>
+    <script src="js/sortable-nestable.js"></script>
+    <script src="js/dialogs.js"></script>
+    <script src="js/mainscripts.bundle.js"></script>
+    <script src="js/jquery-datatable.js"></script>
+    <script src="js/my_functions.js"></script>
+    <script>
+        $(function () {
+            initialisation();
+        })
+    </script>
+
+</body>
