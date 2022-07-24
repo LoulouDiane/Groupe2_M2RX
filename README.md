@@ -83,7 +83,7 @@ Suivant les propositions de l'article, nous avons resolus de lancer le client da
 ```bash
 $ sudo apt install php7.4-cli
 ```
-2. On lance le serveur web au port 8000
+2. lancer le serveur web au port 8000
 ```bash
 $ php -S localhost:8000
 ```
