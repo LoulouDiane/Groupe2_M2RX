@@ -70,7 +70,7 @@ $ flask db migrate
 ```bash
 $ flask db upgrade 
 ```
-## III. Lancement du Serveur (API Restfull)
+## III. Lancement du Serveur (API Restful)
 1. Lancer l'API 
 ```bash
 $ flask run 
